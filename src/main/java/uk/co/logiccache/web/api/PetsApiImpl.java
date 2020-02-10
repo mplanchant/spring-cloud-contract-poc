@@ -2,7 +2,6 @@ package uk.co.logiccache.web.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import uk.co.logiccache.service.PetService;
 import uk.co.logiccache.web.dto.Pet;
@@ -35,7 +34,8 @@ public class PetsApiImpl implements PetsApi {
 
     @Override
     public ResponseEntity<Pet> showPetById(Long petId) {
-        Optional<Pet> pet = petService.retrievePet(petId);
-        return pet.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return petService.retrievePet(petId)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
