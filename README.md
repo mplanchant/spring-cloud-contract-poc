@@ -1,4 +1,4 @@
-# Spring Cloud Contract POC
+# Spring Cloud Contract POC [![Build Status](https://travis-ci.com/mplanchant/spring-cloud-contract-poc.svg?branch=master)](https://travis-ci.com/mplanchant/spring-cloud-contract-poc)
 
 ## Requirements
 
